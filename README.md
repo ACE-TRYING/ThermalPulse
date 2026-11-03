@@ -164,37 +164,95 @@ Gemini-generated content is distinguished from fallback responses. If the API is
 
 ## 📂 Project Structure
 
-The project follows a React + Vite + TypeScript frontend and Express + TypeScript backend architecture.
-
 ```text
-ThermalPulse/
+NTRO-ThermalPulse/
+│
+├── backend/
+│   ├── config/
+│   │   └── env.ts
+│   │
+│   ├── routes/
+│   │   ├── firmsRoutes.ts
+│   │   ├── geminiRoutes.ts
+│   │   ├── healthRoutes.ts
+│   │   ├── osmRoutes.ts
+│   │   └── weatherRoutes.ts
+│   │
+│   ├── services/
+│   │   ├── firmsService.ts
+│   │   ├── geminiService.ts
+│   │   ├── osmService.ts
+│   │   └── weatherService.ts
+│   │
+│   └── server.ts
+│
+├── scratch/
+│   ├── check_mapkey.ts
+│   ├── run_phase9_tests.ts
+│   └── test_live_firms_call.ts
 │
 ├── src/
 │   ├── components/
-│   ├── utils/
-│   │   └── geoUtils.ts
+│   │   ├── AnalyticsDashboard.tsx
+│   │   ├── AnomalyDetailModal.tsx
+│   │   ├── ControlPanel.tsx
+│   │   ├── DataManagementModal.tsx
+│   │   ├── FeatureOverview.tsx
+│   │   ├── Footer.tsx
+│   │   ├── GisMap.tsx
+│   │   ├── Header.tsx
+│   │   ├── HeroSection.tsx
+│   │   ├── SegregationMatrixModal.tsx
+│   │   ├── SimulatePassModal.tsx
+│   │   └── TacticalBriefModal.tsx
+│   │
+│   ├── context/
+│   │   └── ThemeContext.tsx
+│   │
 │   ├── data/
 │   │   └── mockGeospatialData.ts
-│   └── App.tsx
-│
-├── backend/
-│   ├── services/
-│   │   ├── firmsService.ts
-│   │   └── geminiService.ts
-│   ├── routes/
-│   │   └── geminiRoutes.ts
-│   ├── config/
-│   │   └── env.ts
-│   └── server.ts
+│   │
+│   ├── utils/
+│   │   └── geoUtils.ts
+│   │
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── types.ts
 │
 ├── .env.example
+├── .gitignore
+├── index.html
+├── metadata.json
 ├── package.json
+├── package-lock.json
+├── bun.lock
+├── server.ts
+├── test_phase5.ts
+├── tsconfig.json
+├── vite.config.ts
 └── README.md
 ```
 
-*Note: This is a representative overview of the main project components. Refer to the repository for the complete directory structure.*
+### Directory Overview
 
----
+| Directory / File | Responsibility |
+|---|---|
+| `backend/config/` | Environment configuration and API client initialization |
+| `backend/routes/` | Backend API route definitions |
+| `backend/services/` | NASA FIRMS, Gemini, OSM and weather integrations |
+| `backend/server.ts` | Express backend server |
+| `scratch/` | Development utilities and testing scripts |
+| `src/components/` | Frontend UI components, dashboards, maps and modals |
+| `src/context/` | React context and application theme management |
+| `src/data/` | Geospatial mock/reference data |
+| `src/utils/` | Geographic utility functions |
+| `src/App.tsx` | Main React application component |
+| `src/types.ts` | TypeScript type definitions |
+| `server.ts` | Root-level server entry point |
+| `test_phase5.ts` | Project testing script |
+| `vite.config.ts` | Vite configuration |
+| `package.json` | Project dependencies and scripts |
 
 ## 🚀 Getting Started
 
